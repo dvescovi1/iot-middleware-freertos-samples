@@ -1,7 +1,10 @@
 {
     "cmake.cmakePath": "cube-cmake",
     "cmake.configureArgs": [
-        "-DCMAKE_COMMAND=cube-cmake"
+        "-DCMAKE_COMMAND=cube-cmake",
+        "-DVENDOR=ST",
+        "-DBOARD=stm32h563-nucleo",
+        "-Bstm32h563-nucleo"
     ],
     "cmake.preferredGenerators": [
         "Ninja"

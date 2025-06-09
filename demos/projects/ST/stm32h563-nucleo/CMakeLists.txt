@@ -4,14 +4,15 @@
 stm32_fetch_cube(H5)
 lwip_fetch()
 
-find_package(CMSIS COMPONENTS STM32H7 STM32H7_M7 REQUIRED)
-find_package(HAL COMPONENTS STM32H7_M7 REQUIRED)
-find_package(BSP COMPONENTS STM32H745XI_M7 REQUIRED)
+find_package(CMSIS COMPONENTS STM32H5 REQUIRED)
+#find_package(HAL COMPONENTS STM32H5 REQUIRED)
+find_package(BSP COMPONENTS STM32H5xx-NUCLEO REQUIRED)
 find_package(LWIP)
 
 # set parent scope path
 set(BOARD_DEMO_CONFIG_PATH ${CMAKE_CURRENT_SOURCE_DIR}/config CACHE INTERNAL "Config path")
-set(BOARD_DEMO_FREERTOS_PORT_PATH ${FreeRTOS_ARM_CM7_PATH} CACHE INTERNAL "FreeRTOS Port used ")
+set(BOARD_DEMO_FREERTOS_PORT_PATH ${FreeRTOS_ARM_CM33_NTZ_PATH} CACHE INTERNAL "FreeRTOS Port used ")
+#set(BOARD_DEMO_FREERTOS_PORT_PATH ${FreeRTOS_ARM_CM7_PATH} CACHE INTERNAL "FreeRTOS Port used ")
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/gcc_flags.cmake)
 
@@ -46,25 +47,25 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     FreeRTOSPlus::Utilities::logging
     FreeRTOSPlus::ThirdParty::mbedtls
     LWIP
-    HAL::STM32::H5::RCC
-    HAL::STM32::H5::RCCEx
-    HAL::STM32::H5::SPI
-    HAL::STM32::H5::RTC
-    HAL::STM32::H5::UART
-    HAL::STM32::H5::DMA
-    HAL::STM32::H5::PWR
-    HAL::STM32::H5::PWREx
-    HAL::STM32::H5::GPIO
-    HAL::STM32::H5::CORTEX
-    HAL::STM32::H5::RNG
-    HAL::STM32::H5::TIM
-    HAL::STM32::H5::TIMEx
-    HAL::STM32::H5::UARTEx
+#    HAL::STM32::H5::RCC
+#    HAL::STM32::H5::RCCEx
+#    HAL::STM32::H5::SPI
+#    HAL::STM32::H5::RTC
+#    HAL::STM32::H5::UART
+#    HAL::STM32::H5::DMA
+#    HAL::STM32::H5::PWR
+#    HAL::STM32::H5::PWREx
+#    HAL::STM32::H5::GPIO
+#    HAL::STM32::H5::CORTEX
+#    HAL::STM32::H5::RNG
+#    HAL::STM32::H5::TIM
+#    HAL::STM32::H5::TIMEx
+#    HAL::STM32::H5::UARTEx
     CMSIS::STM32::H5xx
     STM32::NoSys
     az::iot_middleware::freertos
-    HAL::STM32::H5::ETH
-    BSP::STM32::H5::LAN8742
+#    HAL::STM32::H5::ETH
+#    BSP::STM32::H5::LAN8742
     SAMPLE::AZUREIOT
     SAMPLE::COMMON::CONNECTION
     SAMPLE::TRANSPORT::MBEDTLS
@@ -95,27 +96,27 @@ target_link_libraries(${PROJECT_NAME}-pnp PRIVATE
     FreeRTOSPlus::Utilities::logging
     FreeRTOSPlus::ThirdParty::mbedtls
     LWIP
-    HAL::STM32::H5::RCC
-    HAL::STM32::H5::RCCEx
-    HAL::STM32::H5::SPI
-    HAL::STM32::H5::RTC
-    HAL::STM32::H5::UART
-    HAL::STM32::H5::DMA
-    HAL::STM32::H5::PWR
-    HAL::STM32::H5::PWREx
-    HAL::STM32::H5::GPIO
-    HAL::STM32::H5::CORTEX
-    HAL::STM32::H5::RNG
-    HAL::STM32::H5::TIM
-    HAL::STM32::H5::TIMEx
-    HAL::STM32::H5::UARTEx
+#    HAL::STM32::H5::RCC
+#    HAL::STM32::H5::RCCEx
+#    HAL::STM32::H5::SPI
+#    HAL::STM32::H5::RTC
+#    HAL::STM32::H5::UART
+#    HAL::STM32::H5::DMA
+#    HAL::STM32::H5::PWR
+#    HAL::STM32::H5::PWREx
+#    HAL::STM32::H5::GPIO
+#    HAL::STM32::H5::CORTEX
+#    HAL::STM32::H5::RNG
+#    HAL::STM32::H5::TIM
+#    HAL::STM32::H5::TIMEx
+#    HAL::STM32::H5::UARTEx
     CMSIS::STM32::H5xx
     STM32::Nano
     STM32::Nano::FloatScan
     STM32::Nano::FloatPrint
     az::iot_middleware::freertos
-    HAL::STM32::H5::ETH
-    BSP::STM32::H5::LAN8742
+#    HAL::STM32::H5::ETH
+#    BSP::STM32::H5::LAN8742
     SAMPLE::AZUREIOTPNP
     SAMPLE::COMMON::CONNECTION
     SAMPLE::TRANSPORT::MBEDTLS
@@ -144,33 +145,33 @@ target_include_directories(${PROJECT_NAME}-adu PUBLIC
 target_link_libraries(${PROJECT_NAME}-adu PRIVATE
     FreeRTOS::Timers
     FreeRTOS::Heap::5
-    FreeRTOS::ARM_CM7
+    FreeRTOS::ARM_CM33
     FreeRTOSPlus::Utilities::backoff_algorithm
     FreeRTOSPlus::Utilities::logging
     FreeRTOSPlus::ThirdParty::mbedtls
     LWIP
-    HAL::STM32::H5::RCC
-    HAL::STM32::H5::RCCEx
-    HAL::STM32::H5::SPI
-    HAL::STM32::H5::RTC
-    HAL::STM32::H5::UART
-    HAL::STM32::H5::DMA
-    HAL::STM32::H5::PWR
-    HAL::STM32::H5::PWREx
-    HAL::STM32::H5::GPIO
-    HAL::STM32::H5::CORTEX
-    HAL::STM32::H5::RNG
-    HAL::STM32::H5::TIM
-    HAL::STM32::H5::TIMEx
-    HAL::STM32::H5::UARTEx
+#    HAL::STM32::H5::RCC
+#    HAL::STM32::H5::RCCEx
+#    HAL::STM32::H5::SPI
+#    HAL::STM32::H5::RTC
+#    HAL::STM32::H5::UART
+#    HAL::STM32::H5::DMA
+#    HAL::STM32::H5::PWR
+#    HAL::STM32::H5::PWREx
+#    HAL::STM32::H5::GPIO
+#    HAL::STM32::H5::CORTEX
+#    HAL::STM32::H5::RNG
+#    HAL::STM32::H5::TIM
+#    HAL::STM32::H5::TIMEx
+#    HAL::STM32::H5::UARTEx
     CMSIS::STM32::H5xx
     STM32::Nano
     STM32::Nano::FloatScan
     STM32::Nano::FloatPrint
     az::iot_middleware::freertos
     az::iot_middleware::core_http
-    HAL::STM32::H7::M7::ETH
-    BSP::STM32::H7::M7::LAN8742
+    HAL::STM32::H5::ETH
+#    BSP::STM32::H5::LAN8742
     SAMPLE::AZUREIOTADU
     SAMPLE::COMMON::CONNECTION
     SAMPLE::TRANSPORT::MBEDTLS

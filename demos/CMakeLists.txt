@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 if(NOT DEFINED BOARD OR BOARD STREQUAL "")
-    set(BOARD "stm32h745i-disco" CACHE STRING "stm32h745i-disco")
+    set(BOARD "stm32h563-nucleo" CACHE STRING "stm32h563-nucleo")
 endif()
 set(VENDOR ${VENDOR} CACHE STRING "ST")
 
