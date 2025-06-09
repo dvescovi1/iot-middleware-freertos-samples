@@ -41,7 +41,7 @@ function(free_rtos_fetch)
 
         if(NOT FREERTOS_POPULATED)
             set(FETCHCONTENT_QUIET FALSE) # To see progress
-            FetchContent_Populate(FREERTOS)
+            FetchContent_MakeAvailable(FREERTOS)
         endif()
 
         set(FREERTOS_PATH ${freertos_SOURCE_DIR} PARENT_SCOPE)
@@ -57,7 +57,7 @@ function(nxp_mcux_sdk_fetch)
 
         if(NOT NXP_MCUX_SDK_POPULATED)
             set(FETCHCONTENT_QUIET FALSE) # To see progress
-            FetchContent_Populate(NXP_MCUX_SDK)
+            FetchContent_MakeAvailable(NXP_MCUX_SDK)
         endif()
 
         set(NXP_MCUX_SDK_PATH ${nxp_mcux_sdk_SOURCE_DIR} PARENT_SCOPE)
@@ -73,7 +73,7 @@ function(nxp_sfw_fetch)
 
         if(NOT NXP_SFW_POPULATED)
             set(FETCHCONTENT_QUIET FALSE) # To see progress
-            FetchContent_Populate(NXP_SFW)
+            FetchContent_MakeAvailable(NXP_SFW)
         endif()
 
         set(NXP_SFW_PATH ${nxp_sfw_SOURCE_DIR} PARENT_SCOPE)
@@ -89,7 +89,7 @@ function(lwip_fetch)
 
         if(NOT LWIP_POPULATED)
             set(FETCHCONTENT_QUIET FALSE) # To see progress
-            FetchContent_Populate(LWIP)
+            FetchContent_MakeAvailable(LWIP)
         endif()
 
         set(LWIP_PATH ${lwip_SOURCE_DIR} PARENT_SCOPE)

@@ -95,7 +95,7 @@ function(stm32_fetch_cube)
 		FetchContent_GetProperties(${CUBE_NAME} POPULATED CUBE_POPULATED)
         if(NOT CUBE_POPULATED)
             set(FETCHCONTENT_QUIET FALSE) # To see progress
-            FetchContent_Populate(${CUBE_NAME})
+            FetchContent_MakeAvailable(${CUBE_NAME})
         endif()
         
         set(STM32_CUBE_${FAMILY}_PATH ${${CUBE_NAME_L}_SOURCE_DIR} PARENT_SCOPE)
@@ -106,7 +106,7 @@ function(stm32_fetch_cmsis)
 	if(NOT STM32_CMSIS_PATH)
         if(NOT STM32-CMSIS_POPULATED)
             set(FETCHCONTENT_QUIET FALSE) # To see progress
-            FetchContent_Populate(STM32-CMSIS)
+            FetchContent_MakeAvailable(STM32-CMSIS)
         endif()
         
         set(STM32_CMSIS_PATH ${stm32-cmsis_SOURCE_DIR} PARENT_SCOPE)
@@ -125,7 +125,7 @@ function(stm32_fetch_cmsis)
 		FetchContent_GetProperties(${CMSIS_NAME_L} POPULATED CMSIS_POPULATED)
         if(NOT CMSIS_POPULATED)
             set(FETCHCONTENT_QUIET FALSE) # To see progress
-            FetchContent_Populate(${CMSIS_NAME})
+            FetchContent_MakeAvailable(${CMSIS_NAME})
         endif()
         
         set(STM32_CMSIS_${FAMILY}_PATH ${${CMSIS_NAME_L}_SOURCE_DIR} PARENT_SCOPE)
@@ -145,7 +145,7 @@ function(stm32_fetch_hal)
 		FetchContent_GetProperties(${HAL_NAME} POPULATED HAL_POPULATED)
         if(NOT HAL_POPULATED)
             set(FETCHCONTENT_QUIET FALSE) # To see progress
-            FetchContent_Populate(${HAL_NAME})
+            FetchContent_MakeAvailable(${HAL_NAME})
         endif()
         
         set(STM32_HAL_${FAMILY}_PATH ${${HAL_NAME_L}_SOURCE_DIR} PARENT_SCOPE)

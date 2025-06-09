@@ -1,12 +1,15 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # SPDX-License-Identifier: MIT
 
-if (NOT BOARD)
-    message(FATAL_ERROR "Board is not defined.")
+if(NOT DEFINED BOARD OR BOARD STREQUAL "")
+    set(BOARD "stm32h745i-disco" CACHE STRING "stm32h745i-disco")
 endif()
+set(VENDOR ${VENDOR} CACHE STRING "ST")
 
-string(TOLOWER ${BOARD} BOARD_L)
-string(TOUPPER ${BOARD} BOARD_U)
+string(TOLOWER "${BOARD}" BOARD_L)
+string(TOUPPER "${BOARD}" BOARD_U)
+
+#add_dependencies(dist lwipdocs)
 
 # Target for sample task
 if(NOT (TARGET SAMPLE::AZUREIOT))
