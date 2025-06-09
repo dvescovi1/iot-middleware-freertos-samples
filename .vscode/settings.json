@@ -3,8 +3,8 @@
     "cmake.configureArgs": [
         "-DCMAKE_COMMAND=cube-cmake",
         "-DVENDOR=ST",
-        "-DBOARD=stm32h563-nucleo",
-        "-Bstm32h563-nucleo"
+        "-DBOARD=stm32h745i-disco",
+        "-Bstm32h745i-discox"
     ],
     "cmake.preferredGenerators": [
         "Ninja"
