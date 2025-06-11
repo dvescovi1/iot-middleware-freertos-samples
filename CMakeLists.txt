@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.13)
 if(NOT VENDOR MATCHES "^PC$")
-    set(CMAKE_TOOLCHAIN_FILE cmake/${VENDOR}_gcc.cmake)
+    set(CMAKE_TOOLCHAIN_FILE cmake/_gcc.cmake)
 endif()
 
 project(iot-middleware-sample C ASM)
