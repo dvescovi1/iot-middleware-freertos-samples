@@ -12,11 +12,11 @@ set(STM32_H5_CCRAM_SIZES
       0K   0K
 )
 
-stm32_util_create_family_targets(L5)
+stm32_util_create_family_targets(H5)
 
-target_compile_options(STM32::L5 INTERFACE 
+target_compile_options(STM32::H5 INTERFACE 
     -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard
 )
-target_link_options(STM32::L5 INTERFACE 
+target_link_options(STM32::H5 INTERFACE 
     -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard
 )
